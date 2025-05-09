@@ -110,6 +110,28 @@
   gap: 2rem;
 }
 
+header {
+  padding: 0.5rem 1rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 3.5rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+header .toggle-theme-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.25rem;
+  color: var(--color-text-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -127,7 +149,6 @@ body {
 
 main {
   height: 100%;
-  width: 100%;
   padding: 1rem;
 }
 

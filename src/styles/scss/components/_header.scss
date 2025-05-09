@@ -1,0 +1,23 @@
+header {
+    padding: 0.5rem 1rem;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 3.5rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    .toggle-theme-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1.25rem;
+        color: var(--color-text-primary);
+    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
