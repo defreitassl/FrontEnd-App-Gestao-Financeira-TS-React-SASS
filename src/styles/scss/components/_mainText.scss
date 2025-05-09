@@ -1,0 +1,15 @@
+@use "../utils/typography" as typo;
+
+.main-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+        font-family: typo.$font-text-primary;
+        font-weight: 500;
+        font-size: 2rem;
+        color: var(--color-text-primary);
+    }
+
+}

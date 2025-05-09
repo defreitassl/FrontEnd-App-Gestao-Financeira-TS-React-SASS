@@ -1,0 +1,14 @@
+@use "../components/loginCardActions";
+@use "../components/loginCardInputs";
+@use "../components/mainText";
+
+.login-card {
+    background-color: var(--color-bg-secundary);
+    padding: 2rem 1.5rem;
+    border-color: var(--color-border);
+    border-radius: 1rem;
+    box-shadow: 0.1rem 0.4rem 0.5rem 0.1rem var(--color-box-shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}

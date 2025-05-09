@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+:root {
+  --color-bg-primary: #ededed;
+  --color-bg-secundary: #fbfbfb;
+  --color-text-primary: #111827;
+  --color-text-secundary: #6B7280;
+  --color-inflow: #16A34A;
+  --color-outflow: #DC2626;
+  --color-border: #E5E7EB;
+  --color-btn-primary: #748ddd;
+  --color-btn-primary-hover: #7b95ea;
+  --color-bg-input: #ffffff;
+  --color-box-shadow: #c3c2c2;
+}
+
+.dark {
+  --color-bg-primary: #2c2d2f;
+  --color-bg-secundary: #191b21;
+  --color-text-primary: #F9FAFB;
+  --color-text-secundary: #9CA3AF;
+  --color-inflow: #4ADE80;
+  --color-outflow: #F87171;
+  --color-border: #374151;
+  --color-btn-primary: #748ddd;
+  --color-btn-primary-hover: #7b95ea;
+  --color-bg-input: #272b32;
+  --color-box-shadow: #111111;
+}
+
+.login-card-actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+.login-card-actions .large-btn {
+  min-width: 80%;
+  height: 2.5rem;
+  background-color: var(--color-btn-primary);
+  transition: 0.3s ease;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-card-actions .large-btn:hover {
+  background-color: var(--color-btn-primary-hover);
+}
+.login-card-actions .large-btn .large-btn-text {
+  font-family: "Roboto";
+  color: var(--color-bg-secundary);
+  font-weight: 600;
+  font-size: larger;
+}
+.login-card-actions .login-footer-text {
+  display: flex;
+  justify-content: center;
+  font-family: "Roboto";
+  color: var(--color-text-secundary);
+}
+.login-card-actions .login-footer-text a {
+  text-decoration: none;
+}
+.login-card-actions .login-footer-text span {
+  color: var(--color-btn-primary);
+  font-family: "Roboto";
+}
+
+.login-card-inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+.login-card-inputs .large-input {
+  color: var(--color-text-primary);
+  font-family: "Roboto";
+  border: none;
+  border-radius: 6px;
+  background-color: var(--color-bg-input);
+  height: 2.5rem;
+  padding: 0rem 0.4rem;
+}
+
+.main-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-text p {
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 2rem;
+  color: var(--color-text-primary);
+}
+
+.login-card {
+  background-color: var(--color-bg-secundary);
+  padding: 2rem 1.5rem;
+  border-color: var(--color-border);
+  border-radius: 1rem;
+  box-shadow: 0.1rem 0.4rem 0.5rem 0.1rem var(--color-box-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-bg-primary);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+}
+
+/*# sourceMappingURL=styles.css.map */
