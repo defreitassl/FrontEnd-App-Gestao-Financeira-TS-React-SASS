@@ -5,6 +5,7 @@ import LoginFooter from "./LoginFooter"
 import Container from "./Container"
 import SubText from "./SubText"
 import DashboardStats from "./DashboardStats/DashboardStats"
+import RecentTransactions from "./RecentTransactions/RecentTransactions"
 
 export {
     LargeButton,
@@ -13,5 +14,6 @@ export {
     LoginFooter,
     Container,
     SubText,
-    DashboardStats
+    DashboardStats,
+    RecentTransactions
 }

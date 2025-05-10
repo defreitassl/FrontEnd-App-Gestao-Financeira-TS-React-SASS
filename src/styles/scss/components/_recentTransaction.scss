@@ -1,0 +1,42 @@
+@use "../utils/variables" as v;
+@use "../utils/typography" as typo;
+@use "./dashboardStats";
+
+
+.recent-transaction-item {
+    @extend .dashboard-item;
+
+    .recent-transaction-name {
+        width: 40%;
+        font-size: 1rem;
+        @extend .dashboard-item-name;
+    }
+
+    .recent-transaction-inner-container {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        width: 60%;
+
+        .recent-transaction-category {
+            display: none;
+            font-size: 1rem;
+            @extend .dashboard-item-name;
+        }
+        
+        .recent-transaction-value {
+            font-size: 1rem;
+            @extend .dashboard-item-value;
+        }
+    }
+
+    @media (min-width: 460px) {
+        .recent-transaction-inner-container {
+            justify-content: space-around;
+
+            .recent-transaction-category {
+                display: block;
+            }
+        }
+    }
+}

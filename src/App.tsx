@@ -3,7 +3,7 @@
 import { useTheme } from "./hooks"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons"
-import { MainText, Container, LargeButton, SubText, DashboardStats } from "./components"
+import { MainText, Container, LargeButton, SubText, DashboardStats, RecentTransactions } from "./components"
 
 function App() {
 
@@ -30,7 +30,10 @@ function App() {
                 <MainText text="Dashboard" alignLeft={true}/>
                 <DashboardStats/>
                 <LargeButton innerText="New Transaction"/>
-                <SubText text="Recent Transactions"/>
+                <div className="recent-transactions-area">
+                    <SubText text="Recent Transactions"/>
+                    <RecentTransactions/>
+                </div>
             </Container>
         </main>
       </>

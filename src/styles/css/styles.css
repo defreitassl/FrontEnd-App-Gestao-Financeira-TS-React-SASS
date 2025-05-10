@@ -3,8 +3,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 :root {
-  --color-bg-primary: #ededed;
-  --color-bg-secundary: #fbfbfb;
+  --color-bg-primary: #e6e6e6;
+  --color-bg-secundary: #f3f3f3;
   --color-text-primary: #111827;
   --color-text-secundary: #6B7280;
   --color-inflow: #16A34A;
@@ -158,38 +158,85 @@ header .toggle-theme-button {
   gap: 2rem;
 }
 
-.dashboard-item {
+@media (max-width: 320px) {
+  .container-card {
+    padding: 1rem;
+  }
+}
+.dashboard-item, .recent-transaction-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 1.5rem;
   background-color: var(--color-bg-input);
-  height: 3rem;
+  height: 4rem;
   border-radius: 8px;
-  box-shadow: 0rem 0.3rem 0.5rem var(--color-box-shadow);
 }
-.dashboard-item .dashboard-item-name {
+.dashboard-item .dashboard-item-name, .recent-transaction-item .dashboard-item-name, .recent-transaction-item .recent-transaction-name, .recent-transaction-item .recent-transaction-inner-container .recent-transaction-category {
   font-weight: 600;
   font-size: 1.2rem;
   font-family: "Roboto";
-  color: var(--color-text-primary);
+  color: var(--color-text-secundary);
 }
-.dashboard-item .dashboard-item-value {
+.dashboard-item .dashboard-item-value, .recent-transaction-item .dashboard-item-value, .recent-transaction-item .recent-transaction-inner-container .recent-transaction-value {
   font-family: "Space Mono";
   font-weight: 600;
   font-size: 1.2rem;
+  color: var(--color-text-secundary);
 }
-.dashboard-item .dashboard-item-value .inflow {
+.dashboard-item .dashboard-item-value.inflow, .recent-transaction-item .dashboard-item-value.inflow, .recent-transaction-item .recent-transaction-inner-container .inflow.recent-transaction-value {
   color: var(--color-inflow);
 }
-.dashboard-item .dashboard-item-value .outflow {
+.dashboard-item .dashboard-item-value.outflow, .recent-transaction-item .dashboard-item-value.outflow, .recent-transaction-item .recent-transaction-inner-container .outflow.recent-transaction-value {
   color: var(--color-outflow);
+}
+
+@media (max-width: 320px) {
+  .dashboard-item, .recent-transaction-item {
+    padding: 0.5rem 0.5rem;
+  }
+}
+.recent-transaction-item .recent-transaction-name {
+  width: 40%;
+  font-size: 1rem;
+}
+.recent-transaction-item .recent-transaction-inner-container {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 60%;
+}
+.recent-transaction-item .recent-transaction-inner-container .recent-transaction-category {
+  display: none;
+  font-size: 1rem;
+}
+.recent-transaction-item .recent-transaction-inner-container .recent-transaction-value {
+  font-size: 1rem;
+}
+@media (min-width: 460px) {
+  .recent-transaction-item .recent-transaction-inner-container {
+    justify-content: space-around;
+  }
+  .recent-transaction-item .recent-transaction-inner-container .recent-transaction-category {
+    display: block;
+  }
 }
 
 .dashboard-stats {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.6rem;
+}
+
+.recent-transactions-area {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.recent-transactions-area .recent-transactions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
 }
 
 * {
