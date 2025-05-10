@@ -196,6 +196,9 @@ header .toggle-theme-button {
     padding: 0.5rem 0.5rem;
   }
 }
+.recent-transaction-item {
+  height: 3rem;
+}
 .recent-transaction-item .recent-transaction-name {
   width: 40%;
   font-size: 1rem;

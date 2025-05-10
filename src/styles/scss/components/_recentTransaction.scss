@@ -5,6 +5,7 @@
 
 .recent-transaction-item {
     @extend .dashboard-item;
+    height: 3rem;
 
     .recent-transaction-name {
         width: 40%;
