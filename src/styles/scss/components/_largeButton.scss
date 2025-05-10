@@ -1,13 +1,14 @@
 @use "../utils/typography" as typo;
+@use "../utils/variables" as v;
 
 .large-btn {
     min-width: 80%;
     height: 2.5rem;
     background-color: var(--color-btn-primary);
-    transition: 0.3s ease;
+    transition: v.$transition;
     cursor: pointer;
     border: none;
-    border-radius: 8px;
+    border-radius: v.$btn-border-radius;
 
     display: flex;
     justify-content: center;

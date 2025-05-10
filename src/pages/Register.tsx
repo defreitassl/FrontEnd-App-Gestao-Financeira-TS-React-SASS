@@ -1,10 +1,9 @@
-import { MainText, LargeInput, LargeButton, LoginFooter } from "../components"
-
+import { MainText, LargeInput, LargeButton, LoginFooter, Container } from "../components"
 
 const RegisterPage = () => {
 
     return (
-        <div className="container-card">
+        <Container>
             <MainText text="Register"/>
             <div className="form-inputs">
                 <LargeInput placeholder="Username" inputType="text"/>
@@ -15,7 +14,7 @@ const RegisterPage = () => {
                 <LargeButton innerText="Sign Up"/>
                 <LoginFooter link="/login" message="Already have an account?" linkWord="Sign In"/>
             </div>
-        </div>
+        </Container>
     )
 }
 

@@ -1,6 +1,6 @@
 @use "../utils/typography" as typo;
 
-.main-text {
+.main-title {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,6 +9,20 @@
         font-family: typo.$font-text-primary;
         font-weight: 500;
         font-size: 2rem;
+        color: var(--color-text-primary);
+    }
+
+}
+
+.sub-title {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    p {
+        font-family: typo.$font-text-primary;
+        font-weight: 500;
+        font-size: 1.3rem;
         color: var(--color-text-primary);
     }
 

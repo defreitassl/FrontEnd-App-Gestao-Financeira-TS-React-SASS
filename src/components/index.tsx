@@ -3,11 +3,15 @@ import LargeInput from "./LargeInput"
 import MainText from "./MainText"
 import LoginFooter from "./LoginFooter"
 import Container from "./Container"
+import SubText from "./SubText"
+import DashboardStats from "./DashboardStats/DashboardStats"
 
 export {
     LargeButton,
     LargeInput,
     MainText,
     LoginFooter,
-    Container
+    Container,
+    SubText,
+    DashboardStats
 }

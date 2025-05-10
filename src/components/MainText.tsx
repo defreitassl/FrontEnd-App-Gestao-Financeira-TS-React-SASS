@@ -6,7 +6,7 @@ interface IMainText {
 const MainText = ({ text, alignLeft=false }: IMainText) => {
 
     return (
-        <div className={alignLeft ? "main-text align-left" : "main-text"}>
+        <div className={alignLeft ? "main-title align-left" : "main-title"}>
             <p>{text}</p>
         </div>
     )

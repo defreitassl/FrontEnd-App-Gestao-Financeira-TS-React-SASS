@@ -1,0 +1,34 @@
+@use "../utils/variables" as v;
+@use "../utils/typography" as typo;
+
+.dashboard-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background-color: var(--color-bg-input);
+    height: 3rem;
+    border-radius: v.$btn-border-radius;
+    box-shadow: 0rem 0.3rem 0.5rem var(--color-box-shadow);
+
+    .dashboard-item-name {
+        font-weight: 600;
+        font-size: 1.2rem;
+        font-family: typo.$font-text-body;
+        color: var(--color-text-primary);
+    }
+
+    .dashboard-item-value {
+        font-family: typo.$font-numeric;
+        font-weight: 600;
+        font-size: 1.2rem;
+        
+        .inflow {
+            color: var(--color-inflow);
+        }
+        
+        .outflow {
+            color: var(--color-outflow);
+        }
+    }
+}
