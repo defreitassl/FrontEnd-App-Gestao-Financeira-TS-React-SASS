@@ -12,7 +12,7 @@ const LoginPage = () => {
             </div>
             <div className="login-card-actions">
                 <LargeButton innerText="Sign In"/>
-                <LoginFooter message="Don't have an account?" linkWord="Sign Up"/>
+                <LoginFooter link="/register" message="Don't have an account?" linkWord="Sign Up"/>
             </div>
         </div>
     )

@@ -1,13 +1,16 @@
+import { Link } from "react-router-dom"
+
 interface ILoginFooter {
     message: "Don't have an account?" | "Already have an account?"
     linkWord: "Sign Up" | "Sign In"
+    link: "/login" | "/register"
 }
 
-const LoginFooter = ({ message, linkWord }: ILoginFooter) => {
+const LoginFooter = ({ message, linkWord, link }: ILoginFooter) => {
 
     return (
         <div className="login-footer-text">
-            <p>{message} <a href=""><span>{linkWord}</span></a></p>
+            <p>{message} <Link to={link}><span>{linkWord}</span></Link></p>
         </div>
     )
 }
