@@ -1,0 +1,40 @@
+@use "../utils/typography" as typo;
+@use "./largeButton";
+@use "./largeInput";
+
+
+.form-inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.form-actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+
+    .auth-card-footer-text {
+        display: flex;
+        justify-content: center;
+        font-family: typo.$font-text-body;
+        color: var(--color-text-secundary);
+    
+        a {
+            text-decoration: none;
+        }
+
+        span {
+            color: var(--color-btn-primary);
+            font-family: typo.$font-text-btn;
+            transition: 0.3s ease;
+
+            &:hover {
+                color: var(--color-btn-primary-hover);
+                font-weight: 500;
+            }
+        }
+    }
+}

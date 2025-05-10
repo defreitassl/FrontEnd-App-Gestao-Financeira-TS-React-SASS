@@ -1,0 +1,26 @@
+@use "../utils/typography" as typo;
+
+.large-btn {
+    min-width: 80%;
+    height: 2.5rem;
+    background-color: var(--color-btn-primary);
+    transition: 0.3s ease;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+        background-color: var(--color-btn-primary-hover);
+    }
+
+    .large-btn-text {
+        font-family: typo.$font-text-btn;
+        color: var(--color-bg-secundary);
+        font-weight: 600;
+        font-size: larger;
+    }
+}

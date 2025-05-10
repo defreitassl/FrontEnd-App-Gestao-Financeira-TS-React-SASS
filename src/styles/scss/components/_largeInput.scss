@@ -1,0 +1,11 @@
+@use "../utils/typography" as typo;
+
+.large-input {
+    color: var(--color-text-primary);
+    font-family: typo.$font-text-body;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--color-bg-input);
+    height: 2.5rem;
+    padding: 0rem 0.4rem;
+}

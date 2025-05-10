@@ -11,7 +11,7 @@
   --color-outflow: #DC2626;
   --color-border: #E5E7EB;
   --color-btn-primary: #748ddd;
-  --color-btn-primary-hover: #7b95ea;
+  --color-btn-primary-hover: #8ba2ef;
   --color-bg-input: #ffffff;
   --color-box-shadow: #c3c2c2;
 }
@@ -25,89 +25,9 @@
   --color-outflow: #F87171;
   --color-border: #374151;
   --color-btn-primary: #748ddd;
-  --color-btn-primary-hover: #7b95ea;
+  --color-btn-primary-hover: #8ba2ef;
   --color-bg-input: #272b32;
   --color-box-shadow: #111111;
-}
-
-.login-card-actions {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 1rem;
-}
-.login-card-actions .large-btn {
-  min-width: 80%;
-  height: 2.5rem;
-  background-color: var(--color-btn-primary);
-  transition: 0.3s ease;
-  cursor: pointer;
-  border: none;
-  border-radius: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.login-card-actions .large-btn:hover {
-  background-color: var(--color-btn-primary-hover);
-}
-.login-card-actions .large-btn .large-btn-text {
-  font-family: "Roboto";
-  color: var(--color-bg-secundary);
-  font-weight: 600;
-  font-size: larger;
-}
-.login-card-actions .login-footer-text {
-  display: flex;
-  justify-content: center;
-  font-family: "Roboto";
-  color: var(--color-text-secundary);
-}
-.login-card-actions .login-footer-text a {
-  text-decoration: none;
-}
-.login-card-actions .login-footer-text span {
-  color: var(--color-btn-primary);
-  font-family: "Roboto";
-}
-
-.login-card-inputs {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 1rem;
-}
-.login-card-inputs .large-input {
-  color: var(--color-text-primary);
-  font-family: "Roboto";
-  border: none;
-  border-radius: 6px;
-  background-color: var(--color-bg-input);
-  height: 2.5rem;
-  padding: 0rem 0.4rem;
-}
-
-.main-text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.main-text p {
-  font-family: "Inter";
-  font-weight: 500;
-  font-size: 2rem;
-  color: var(--color-text-primary);
-}
-
-.login-card {
-  background-color: var(--color-bg-secundary);
-  padding: 2rem 1.5rem;
-  border-color: var(--color-border);
-  border-radius: 1rem;
-  box-shadow: 0.1rem 0.4rem 0.5rem 0.1rem var(--color-box-shadow);
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
 }
 
 header {
@@ -130,6 +50,99 @@ header .toggle-theme-button {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.main-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-text p {
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 2rem;
+  color: var(--color-text-primary);
+}
+
+.align-left {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.large-btn {
+  min-width: 80%;
+  height: 2.5rem;
+  background-color: var(--color-btn-primary);
+  transition: 0.3s ease;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.large-btn:hover {
+  background-color: var(--color-btn-primary-hover);
+}
+.large-btn .large-btn-text {
+  font-family: "Roboto";
+  color: var(--color-bg-secundary);
+  font-weight: 600;
+  font-size: larger;
+}
+
+.large-input {
+  color: var(--color-text-primary);
+  font-family: "Roboto";
+  border: none;
+  border-radius: 6px;
+  background-color: var(--color-bg-input);
+  height: 2.5rem;
+  padding: 0rem 0.4rem;
+}
+
+.form-inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.form-actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+.form-actions .auth-card-footer-text {
+  display: flex;
+  justify-content: center;
+  font-family: "Roboto";
+  color: var(--color-text-secundary);
+}
+.form-actions .auth-card-footer-text a {
+  text-decoration: none;
+}
+.form-actions .auth-card-footer-text span {
+  color: var(--color-btn-primary);
+  font-family: "Roboto";
+  transition: 0.3s ease;
+}
+.form-actions .auth-card-footer-text span:hover {
+  color: var(--color-btn-primary-hover);
+  font-weight: 500;
+}
+
+.container-card {
+  background-color: var(--color-bg-secundary);
+  padding: 2rem 1.5rem;
+  border-color: var(--color-border);
+  border-radius: 1rem;
+  box-shadow: 0.1rem 0.4rem 0.5rem 0.1rem var(--color-box-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 * {

@@ -1,11 +1,12 @@
 interface IMainText {
     text: string
+    alignLeft?: boolean
 }
 
-const MainText = ({ text }: IMainText) => {
+const MainText = ({ text, alignLeft=false }: IMainText) => {
 
     return (
-        <div className="main-text">
+        <div className={alignLeft ? "main-text align-left" : "main-text"}>
             <p>{text}</p>
         </div>
     )

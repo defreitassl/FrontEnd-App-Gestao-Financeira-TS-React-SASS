@@ -9,7 +9,7 @@ interface ILoginFooter {
 const LoginFooter = ({ message, linkWord, link }: ILoginFooter) => {
 
     return (
-        <div className="login-footer-text">
+        <div className="auth-card-footer-text">
             <p>{message} <Link to={link}><span>{linkWord}</span></Link></p>
         </div>
     )

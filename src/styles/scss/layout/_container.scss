@@ -1,8 +1,7 @@
-@use "../components/loginCardActions";
-@use "../components/loginCardInputs";
 @use "../components/mainText";
+@use "../components/authForm";
 
-.login-card {
+.container-card {
     background-color: var(--color-bg-secundary);
     padding: 2rem 1.5rem;
     border-color: var(--color-border);
