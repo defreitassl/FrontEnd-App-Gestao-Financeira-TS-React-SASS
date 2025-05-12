@@ -1,0 +1,49 @@
+@use "../utils/typography" as typo;
+@use "../utils/variables" as v;
+
+.notification-box {
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(40px);
+    padding: 1.5rem;
+    border-radius: v.$btn-border-radius;
+    position: absolute;
+    bottom: 3rem;
+    right: 1rem;
+    transition: 0.3s ease;
+
+    .notification-message {
+        color: var(--color-bg-secundary);
+        font-weight: 700;
+        font-family: typo.$font-text-body;
+    }
+
+    .close-notification-btn {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        color: var(--color-bg-secundary);
+        transition: 0.3s ease;
+    }
+
+    .close-notification-btn:hover {
+        transform: scale(1.3);
+        color: var(--color-bg-secundary);
+    }
+
+    &.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    &.success {
+        background-color: var(--color-inflow);
+    }
+
+    &.error {
+        background-color: var(--color-outflow);
+    }
+}

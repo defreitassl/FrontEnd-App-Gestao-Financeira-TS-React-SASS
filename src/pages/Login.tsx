@@ -6,17 +6,20 @@ import { Container,
         MainText 
 } from "../components"
 import { login } from "../services"
+import { useNotification } from "../hooks"
 
 
 const LoginPage = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
+    const { showNotification } = useNotification()
+
     const handleLogin = async () => {
         setEmail("")
         setPassword("")
         const response = await login(email, password)
-        console.log(response)
+        showNotification(response.message, response.error)
     }
 
     return (
@@ -37,7 +40,10 @@ const LoginPage = () => {
                 />
             </div>
             <div className="form-actions">
-                <LargeButton innerText="Sign In" loginEvent={handleLogin}/>
+                <LargeButton 
+                    innerText="Sign In" 
+                    loginEvent={handleLogin}
+                />
                 <LoginFooter link="/register" 
                     message="Don't have an account?" 
                     linkWord="Sign Up"

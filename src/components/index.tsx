@@ -6,6 +6,7 @@ import Container from "./Container"
 import SubText from "./SubText"
 import DashboardStats from "./DashboardStats/DashboardStats"
 import RecentTransactions from "./RecentTransactions/RecentTransactions"
+import ResponseBox from "./Notification"
 
 export {
     LargeButton,
@@ -15,5 +16,6 @@ export {
     Container,
     SubText,
     DashboardStats,
-    RecentTransactions
+    RecentTransactions,
+    ResponseBox
 }

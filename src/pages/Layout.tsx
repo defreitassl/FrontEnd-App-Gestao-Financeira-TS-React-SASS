@@ -24,7 +24,7 @@ const PageLayout = () => {
                 </div>
             </header>
             <main>
-                <Outlet/>
+                {<Outlet/>}
             </main>
         </>
     )
