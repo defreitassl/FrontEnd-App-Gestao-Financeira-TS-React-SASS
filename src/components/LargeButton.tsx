@@ -1,12 +1,12 @@
 interface ILargeButton {
     innerText: string
-    loginEvent: Function
+    event: Function
 }
 
-const LargeButton = ({ innerText, loginEvent }: ILargeButton) => {
+const LargeButton = ({ innerText, event }: ILargeButton) => {
 
     return (
-        <button className="large-btn" onClick={() => {loginEvent()}}>
+        <button className="large-btn" onClick={() => {event()}}>
             <p className="large-btn-text">{innerText}</p>
         </button>
     )

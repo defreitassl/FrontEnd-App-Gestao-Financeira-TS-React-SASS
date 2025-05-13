@@ -6,19 +6,39 @@ import { MainText,
         Container 
 } from "../components"
 import { register } from "../services"
+import { useNavigate } from "react-router-dom"
+import { AuthResponse } from "../types"
+import { useNotification } from "../hooks"
 
 
 const RegisterPage = () => {
+    const navigate = useNavigate()
     const [username, setUsername] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
+    const { showNotification } = useNotification()
+
     const handleRegister = async () => {
+        
+        const response: AuthResponse | undefined 
+        = await register(username, email, password)
+
+        if (!response) {
+            showNotification("Something went wrong", "error")
+            return
+        }
+        if (!response.token) {
+            showNotification(response.message, response.error)
+            return
+        }
+
+        showNotification(response.message, response.error)
+        localStorage.setItem('token', response.token)
         setUsername("")
         setEmail("")
         setPassword("")
-        const response = await register(username, email, password)
-        console.log(response)
+        navigate("/dashboard", { replace: true })
     }
 
     return (
@@ -45,7 +65,7 @@ const RegisterPage = () => {
                 />
             </div>
             <div className="form-actions">
-                <LargeButton innerText="Sign Up" loginEvent={handleRegister}/>
+                <LargeButton innerText="Sign Up" event={handleRegister}/>
                 <LoginFooter link="/login" 
                     message="Already have an account?" 
                     linkWord="Sign In"

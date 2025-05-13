@@ -1,7 +1,7 @@
 @use "./utils/light-theme";
 @use "./utils/dark-theme";
 @use "./components/header";
-@use "./components/responseBox";
+@use "./components/notification";
 @use "./layout/container";
 @use "./layout/dashboard";
 @use "./utils/variables" as v;

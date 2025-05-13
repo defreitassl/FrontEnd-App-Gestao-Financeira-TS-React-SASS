@@ -47,3 +47,25 @@
         background-color: var(--color-outflow);
     }
 }
+
+@media (max-width: 425px) {
+    .notification-box {
+        padding: 1rem 1.5rem;
+        max-width: 80%;
+
+        .notification-message {
+            font-size: 0.8rem;
+        }
+    }
+}
+
+@media (max-width: 470px) {
+    .notification-box {
+        padding: 1.5rem;
+        max-width: 80%;
+
+        .notification-message {
+            font-size: 0.8rem;
+        }
+    }
+}

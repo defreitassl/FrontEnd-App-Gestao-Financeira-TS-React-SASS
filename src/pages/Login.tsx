@@ -34,7 +34,7 @@ const LoginPage = () => {
         localStorage.setItem('token', response.token)
         setEmail("")
         setPassword("")
-        navigate("/dashboard")
+        navigate("/dashboard", { replace: true })
     }
 
     return (
@@ -57,7 +57,7 @@ const LoginPage = () => {
             <div className="form-actions">
                 <LargeButton 
                     innerText="Sign In" 
-                    loginEvent={handleLogin}
+                    event={handleLogin}
                 />
                 <LoginFooter link="/register" 
                     message="Don't have an account?" 
