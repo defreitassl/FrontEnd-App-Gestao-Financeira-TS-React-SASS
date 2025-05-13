@@ -7,19 +7,34 @@ import { Container,
 } from "../components"
 import { login } from "../services"
 import { useNotification } from "../hooks"
+import { AuthResponse } from "../types"
+import { useNavigate } from "react-router-dom"
 
 
 const LoginPage = () => {
+    const navigate = useNavigate()
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
     const { showNotification } = useNotification()
 
-    const handleLogin = async () => {
+    const handleLogin = async (): Promise<void> => {
+        const response: AuthResponse | undefined = await login(email, password)
+
+        if (!response) {
+            showNotification("Something went wrong", "error")
+            return
+        }
+        if (!response.token) {
+            showNotification(response.message, response.error)
+            return
+        }
+
+        showNotification(response.message, response.error)
+        localStorage.setItem('token', response.token)
         setEmail("")
         setPassword("")
-        const response = await login(email, password)
-        showNotification(response.message, response.error)
+        navigate("/dashboard")
     }
 
     return (

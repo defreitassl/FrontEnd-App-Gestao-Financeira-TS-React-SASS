@@ -1,35 +1,33 @@
-const API_BASE = "http://localhost:3333"
+import { fetchWrapper } from "./"
+import { AuthResponse } from "../types"
+
 
 const register = async (
     name: string, 
     email: string, 
     password: string
-) => {
+): Promise<AuthResponse | undefined> => {
     try {
-        const response = await fetch(`${API_BASE}/auth/register`, {
+        const data: AuthResponse | undefined = await fetchWrapper({
             method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ name, email, password })
+            endpoint: "/auth/register",
+            data: { name, email, password }
         })
-        const data = await response.json()
+
         return data
     } catch (error) {
         console.error(error)
     }
 }
 
-const login = async (email: string, password: string) => {
+const login = async (email: string, password: string): Promise<AuthResponse | undefined> => {
     try {
-        const response = await fetch(`${API_BASE}/auth/login`, {
+        const data: AuthResponse | undefined = await fetchWrapper({
             method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ email, password })
+            endpoint: "/auth/login",
+            data: { email, password }
         })
-        const data = await response.json()
+
         return data
     } catch (error) {
         console.error(error)
