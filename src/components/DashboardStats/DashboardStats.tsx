@@ -1,23 +1,30 @@
 import DashboardStat from "./DashboardStat"
 
 
-const DashboardStats = () => {
+interface IDashboardStats {
+    balance: number
+    income: number
+    expenses: number
+}
+
+
+const DashboardStats = ({ balance, income, expenses }: IDashboardStats) => {
     
     return (
         <div className="dashboard-stats">
             <DashboardStat
                 itemName="Balance"
-                itemValue="R$2.437,50"
-                isPositive={true}
+                itemValue={balance}
+                isPositive={balance > 0 ? true : false}
             />
             <DashboardStat
                 itemName="Income"
-                itemValue="R$5.000,00"
+                itemValue={income}
                 isPositive={true}
             />
             <DashboardStat
                 itemName="Expenses"
-                itemValue="R$2.663,50"
+                itemValue={expenses}
                 isPositive={false}
             />
         </div>

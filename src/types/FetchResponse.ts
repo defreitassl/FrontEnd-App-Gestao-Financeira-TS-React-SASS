@@ -1,6 +1,6 @@
-interface FetchResponse {
+interface FetchResponse<T> {
     message: string
-    data?: Object
+    data?: T
     error?: string
     user?: Object
     token?: string
