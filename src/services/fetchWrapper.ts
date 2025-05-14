@@ -22,7 +22,16 @@ const fetchWrapper = async <T>(opts: IFetchOptions): Promise<FetchResponse<T> | 
             body: JSON.stringify(opts.data)
         })
 
-        if (!response.ok) throw new Error("Error while fetching data: " + response.statusText)
+        if (response.status === 401) {
+            localStorage.removeItem("token")
+            window.location.href = "/login"
+            return Promise.reject("Expired Session")
+        }
+        
+        if (!response.ok) {
+            const error = await response.json()
+            throw new Error(error.message || "Error while fetching data")
+        }
 
         const data: FetchResponse<T> = await response.json()
         return data
