@@ -6,8 +6,8 @@ interface IRecentTransaction {
 }
 
 const RecentTransaction = ({
-    transactionName, 
-    transactionCategory, 
+    transactionName,
+    transactionCategory,
     transactionValue,
     isPositive
 }: IRecentTransaction) => {

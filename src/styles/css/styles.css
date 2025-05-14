@@ -30,18 +30,6 @@
   --color-box-shadow: #111111;
 }
 
-header {
-  padding: 0.7rem 1rem 0rem;
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 4rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 nav {
   padding: 0.3rem 1rem;
   display: flex;
@@ -199,7 +187,7 @@ nav {
 
 .large-btn {
   min-width: 80%;
-  height: 2.5rem;
+  min-height: 2.5rem;
   background-color: var(--color-btn-primary);
   transition: 0.3s ease;
   cursor: pointer;
@@ -264,39 +252,37 @@ nav {
 
 .container-card {
   background-color: var(--color-bg-secundary);
-  padding: 2rem;
+  padding: 1rem;
   border-color: var(--color-border);
   border-radius: 1rem;
   box-shadow: 0.1rem 0.4rem 0.5rem 0.1rem var(--color-box-shadow);
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
+  overflow-y: auto;
 }
 
-@media (max-width: 320px) {
-  .container-card {
-    padding: 1rem;
-  }
-}
 .dashboard-item, .recent-transaction-item {
   display: flex;
+  flex-direction: column;
+  width: 50%;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 1.5rem;
+  padding: 0.5rem 0.5rem;
   background-color: var(--color-bg-input);
   height: 4rem;
   border-radius: 8px;
 }
 .dashboard-item .dashboard-item-name, .recent-transaction-item .dashboard-item-name, .recent-transaction-item .recent-transaction-name, .recent-transaction-item .recent-transaction-inner-container .recent-transaction-category {
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 0.8rem;
   font-family: "Roboto";
   color: var(--color-text-secundary);
 }
 .dashboard-item .dashboard-item-value, .recent-transaction-item .dashboard-item-value, .recent-transaction-item .recent-transaction-inner-container .recent-transaction-value {
   font-family: "Space Mono";
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: var(--color-text-secundary);
 }
 .dashboard-item .dashboard-item-value.inflow, .recent-transaction-item .dashboard-item-value.inflow, .recent-transaction-item .recent-transaction-inner-container .inflow.recent-transaction-value {
@@ -306,13 +292,20 @@ nav {
   color: var(--color-outflow);
 }
 
-@media (max-width: 320px) {
-  .dashboard-item, .recent-transaction-item {
-    padding: 0.5rem 0.5rem;
-  }
-}
 .recent-transaction-item {
+  flex-direction: row;
+  width: 100%;
   height: 3rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.recent-transaction-item:hover {
+  background-color: var(--color-btn-hover);
+}
+@media (min-width: 350px) {
+  .recent-transaction-item {
+    padding: 1rem 1rem;
+  }
 }
 .recent-transaction-item .recent-transaction-name {
   width: 40%;
@@ -346,6 +339,28 @@ nav {
   gap: 0.6rem;
 }
 
+.balance-stat {
+  height: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.balance-stat .balance-text {
+  color: var(--color-text-secundary);
+  font-family: "Roboto";
+  font-size: 1.3rem;
+}
+.balance-stat .balance-value {
+  color: var(--color-text-primary);
+  font-family: "Roboto";
+  font-size: 1.5rem;
+}
+
+.dashboard-stats-inner-container {
+  display: flex;
+  gap: 0.6rem;
+}
+
 .recent-transactions-area {
   display: flex;
   flex-direction: column;
@@ -355,6 +370,8 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
+  max-height: 15rem;
+  overflow-y: auto;
 }
 
 * {
@@ -365,15 +382,25 @@ nav {
 
 body {
   background-color: var(--color-bg-primary);
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   transition: 0.3s ease;
 }
 
+header {
+  padding: 0.7rem 1rem 1rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 5rem;
+}
+
 main {
-  height: 100%;
+  margin-top: 5rem;
+  height: calc(100vh - 5rem);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   padding: 1rem;
 }
 

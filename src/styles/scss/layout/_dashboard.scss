@@ -1,5 +1,6 @@
 @use "../components/dashboardStats";
 @use "../components/recentTransaction";
+@use "../utils/typography" as typo;
 
 .dashboard-stats {
     display: flex;
@@ -7,14 +8,41 @@
     gap: 0.6rem;
 }
 
+.balance-stat {
+    height: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+
+    .balance-text {
+        color: var(--color-text-secundary);
+        font-family: typo.$font-text-body;
+        font-size: 1.3rem;
+    }
+
+    .balance-value {
+        color: var(--color-text-primary);
+        font-family: typo.$font-text-body;
+        font-size: 1.5rem;
+    }
+}
+
+.dashboard-stats-inner-container {
+    display: flex; 
+    gap: 0.6rem;
+}
+
 .recent-transactions-area {
     display: flex;
     flex-direction: column;
     gap: 0.6rem;
+    
 
     .recent-transactions {
         display: flex;
         flex-direction: column;
         gap: 0.6rem;
+        max-height: 15rem;
+        overflow-y: auto;
     }
 }

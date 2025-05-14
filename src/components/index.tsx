@@ -7,6 +7,7 @@ import SubText from "./SubText"
 import DashboardStats from "./DashboardStats/DashboardStats"
 import RecentTransactions from "./RecentTransactions/RecentTransactions"
 import ResponseBox from "./Notification"
+import RegisterTransaction from "./RegisterTransaction"
 
 export {
     LargeButton,
@@ -17,5 +18,6 @@ export {
     SubText,
     DashboardStats,
     RecentTransactions,
-    ResponseBox
+    ResponseBox,
+    RegisterTransaction
 }

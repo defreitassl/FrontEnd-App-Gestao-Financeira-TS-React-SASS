@@ -1,5 +1,6 @@
 import { ITransaction } from "../../types"
 import RecentTransaction from "./RecentTransaction"
+import formatCurrency from "../../utils/formatCurrency"
 
 
 interface IRecentTransactions {
@@ -19,8 +20,8 @@ const RecentTransactions = ({ transactions }: IRecentTransactions) => {
                         transactionName= {transaction.name}
                         transactionValue={
                             transaction.amount > 0 
-                            ? "+R$"+transaction.amount 
-                            : "-R$"+transaction.amount
+                            ? formatCurrency(transaction.amount) 
+                            : formatCurrency(transaction.amount)
                         }
                         transactionCategory={transaction.categoryId.name}
                         isPositive={transaction.amount > 0 ? true : false}

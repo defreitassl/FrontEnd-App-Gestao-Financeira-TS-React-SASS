@@ -2,12 +2,13 @@ import { useState, useEffect } from "react"
 import { Container, MainText, DashboardStats, LargeButton, SubText, RecentTransactions } from "../components"
 import { getUserSumary } from "../services"
 import { ITransaction, UserSummary } from "../types"
+import formatCurrency from "../utils/formatCurrency"
 
 
 const DashboardPage = () => {
-    const [balance, setBalance] = useState<number>(0)
-    const [income, setIncome] = useState<number>(0)
-    const [expenses, setExpenses] = useState<number>(0)
+    const [balance, setBalance] = useState<string>("0,00")
+    const [income, setIncome] = useState<string>("0,00")
+    const [expenses, setExpenses] = useState<string>("0,00")
     const [transactions, setTransactions] = useState<ITransaction[] | []>([])
 
 
@@ -17,9 +18,9 @@ const DashboardPage = () => {
             
             if (!data) throw new Error("Error while receiving user summary")
             
-            setBalance(data.balance)
-            setIncome(data.income)
-            setExpenses(data.expenses)
+            setBalance(formatCurrency(data.balance))
+            setIncome(formatCurrency(data.income))
+            setExpenses(formatCurrency(data.expenses))
             setTransactions(data.transactions)
         }
         const token: string | null = localStorage.getItem('token')

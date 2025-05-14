@@ -3,7 +3,7 @@
 
 .large-btn {
     min-width: 80%;
-    height: 2.5rem;
+    min-height: 2.5rem;
     background-color: var(--color-btn-primary);
     transition: v.$transition;
     cursor: pointer;

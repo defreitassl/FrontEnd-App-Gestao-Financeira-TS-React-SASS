@@ -11,7 +11,7 @@ const DashboardStat = ({itemName, itemValue, isPositive}: IDashboardStat) => {
             <p className={
                 isPositive ? "dashboard-item-value inflow" 
                 : "dashboard-item-value outflow"
-            }>{isPositive ? null : "-"}{itemValue}</p>
+            }>{isPositive ? "+" : "-"}{itemValue}</p>
         </div>
     )
 }
