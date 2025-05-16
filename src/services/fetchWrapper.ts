@@ -24,7 +24,7 @@ const fetchWrapper = async <T>(opts: IFetchOptions): Promise<FetchResponse<T> | 
 
         if (response.status === 401) {
             localStorage.removeItem("token")
-            window.location.href = "/login"
+            window.location.href = "/auth/login"
             return Promise.reject("Expired Session")
         }
         

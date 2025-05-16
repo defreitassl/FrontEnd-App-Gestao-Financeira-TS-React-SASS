@@ -14,4 +14,18 @@ interface ITransaction {
     date?: string
 }
 
-export default ITransaction
+interface IRegisterTransaction {
+    categoryId: string,
+    name: string,
+    amount: number,
+    inflow: boolean,
+    paymentMethod: string,
+    description?: string,
+    recipient?: string,
+    date?: string
+}
+
+export {
+    ITransaction,
+    IRegisterTransaction
+}

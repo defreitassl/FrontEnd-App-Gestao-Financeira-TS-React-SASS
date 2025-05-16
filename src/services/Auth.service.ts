@@ -8,7 +8,7 @@ const register = async (
     password: string
 ): Promise<AuthResponse | undefined> => {
     try {
-        const data: AuthResponse | undefined = await fetchWrapper({
+        const data: AuthResponse | undefined = await fetchWrapper<AuthResponse>({
             method: "POST",
             endpoint: "/auth/register",
             data: { name, email, password }
@@ -22,7 +22,7 @@ const register = async (
 
 const login = async (email: string, password: string): Promise<AuthResponse | undefined> => {
     try {
-        const data: AuthResponse | undefined = await fetchWrapper({
+        const data: AuthResponse | undefined = await fetchWrapper<AuthResponse>({
             method: "POST",
             endpoint: "/auth/login",
             data: { email, password }

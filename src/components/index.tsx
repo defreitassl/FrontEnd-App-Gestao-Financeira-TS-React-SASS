@@ -7,7 +7,10 @@ import SubText from "./SubText"
 import DashboardStats from "./DashboardStats/DashboardStats"
 import RecentTransactions from "./RecentTransactions/RecentTransactions"
 import ResponseBox from "./Notification"
-import RegisterTransaction from "./RegisterTransaction"
+import FormLabel from "./RegisterTransactionForm/FormLabel"
+import FormCategorySelect from "./RegisterTransactionForm/FormCategorySelect"
+import FormField from "./RegisterTransactionForm/FormField"
+
 
 export {
     LargeButton,
@@ -19,5 +22,7 @@ export {
     DashboardStats,
     RecentTransactions,
     ResponseBox,
-    RegisterTransaction
+    FormLabel,
+    FormCategorySelect,
+    FormField
 }

@@ -2,6 +2,40 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-bg-primary);
+  transition: 0.3s ease;
+}
+
+header {
+  padding: 0.7rem 1rem 1rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 5rem;
+}
+header.auth-page-header {
+  display: flex;
+  justify-content: end;
+}
+
+main {
+  margin-top: 5rem;
+  height: calc(100vh - 5rem);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+}
+
 :root {
   --color-bg-primary: #e6e6e6;
   --color-bg-secundary: #f3f3f3;
@@ -210,6 +244,7 @@ nav {
 .large-input {
   color: var(--color-text-primary);
   font-family: "Roboto";
+  font-weight: 700;
   border: none;
   border-radius: 8px;
   background-color: var(--color-bg-input);
@@ -273,7 +308,7 @@ nav {
   height: 4rem;
   border-radius: 8px;
 }
-.dashboard-item .dashboard-item-name, .recent-transaction-item .dashboard-item-name, .recent-transaction-item .recent-transaction-name, .recent-transaction-item .recent-transaction-inner-container .recent-transaction-category {
+.dashboard-item .dashboard-item-name, .recent-transaction-item .dashboard-item-name, .recent-transaction-item .recent-transaction-name, .recent-transaction-item .recent-transaction-inner-container .recent-transaction-category, .recent-transaction-item .recent-transaction-inner-container .recent-transaction-date {
   font-weight: 600;
   font-size: 0.8rem;
   font-family: "Roboto";
@@ -294,6 +329,7 @@ nav {
 
 .recent-transaction-item {
   flex-direction: row;
+  padding: 1rem 1rem;
   width: 100%;
   height: 3rem;
   cursor: pointer;
@@ -301,11 +337,6 @@ nav {
 }
 .recent-transaction-item:hover {
   background-color: var(--color-btn-hover);
-}
-@media (min-width: 350px) {
-  .recent-transaction-item {
-    padding: 1rem 1rem;
-  }
 }
 .recent-transaction-item .recent-transaction-name {
   width: 40%;
@@ -321,6 +352,10 @@ nav {
   display: none;
   font-size: 1rem;
 }
+.recent-transaction-item .recent-transaction-inner-container .recent-transaction-date {
+  display: none;
+  font-size: 1rem;
+}
 .recent-transaction-item .recent-transaction-inner-container .recent-transaction-value {
   font-size: 1rem;
 }
@@ -329,6 +364,14 @@ nav {
     justify-content: space-around;
   }
   .recent-transaction-item .recent-transaction-inner-container .recent-transaction-category {
+    display: block;
+  }
+}
+@media (min-width: 825px) {
+  .recent-transaction-item .recent-transaction-inner-container {
+    justify-content: space-between;
+  }
+  .recent-transaction-item .recent-transaction-inner-container .recent-transaction-date {
     display: block;
   }
 }
@@ -370,38 +413,99 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
-  max-height: 15rem;
   overflow-y: auto;
+  scrollbar-width: none;
 }
 
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background-color: var(--color-bg-primary);
-  transition: 0.3s ease;
-}
-
-header {
-  padding: 0.7rem 1rem 1rem;
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 5rem;
-}
-
-main {
-  margin-top: 5rem;
-  height: calc(100vh - 5rem);
-  overflow-y: auto;
+.register-transaction-area {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  padding: 1rem;
+  gap: 2rem;
+}
+
+.register-transaction-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+@media (min-width: 360px) {
+  .form-group {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.form-field .small-form-label {
+  color: var(--color-text-secundary);
+  font-weight: 400;
+  font-family: "Roboto";
+}
+.form-field .small-form-label span {
+  color: var(--color-outflow);
+}
+
+.select-input {
+  padding: 0.8rem 0rem;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--color-bg-input);
+  color: var(--color-text-secundary);
+  font-weight: 600;
+}
+
+.date-input {
+  padding: 0.8rem 0.3rem;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--color-bg-input);
+  color: var(--color-text-secundary);
+  font-weight: 600;
+}
+
+.description-text-area {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--color-bg-input);
+  color: var(--color-text-secundary);
+  font-weight: 600;
+  max-width: 100%;
+  min-width: 100%;
+}
+
+.form-button {
+  position: sticky;
+  bottom: 0;
+  padding: 1rem 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+}
+.form-button .add-transaction-btn {
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem;
+  width: 60%;
+  background-color: var(--color-bg-input);
+  transition: 0.3s ease;
+  color: var(--color-btn-primary);
+  font-weight: 900;
+  font-size: 1.1rem;
+}
+.form-button .add-transaction-btn:hover {
+  background-color: var(--color-btn-primary-hover);
+  color: var(--color-bg-secundary);
 }
 
 /*# sourceMappingURL=styles.css.map */

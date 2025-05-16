@@ -1,3 +1,4 @@
+@use "./layout/baseLayout";
 @use "./utils/light-theme";
 @use "./utils/dark-theme";
 @use "./components/navbar";
@@ -5,33 +6,4 @@
 @use "./layout/container";
 @use "./layout/dashboard";
 @use "./utils/variables" as v;
-
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: var(--color-bg-primary);
-    transition: v.$transition;
-}
-
-header {
-    padding: 0.7rem 1rem 1rem;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 5rem;
-}
-
-main {
-    margin-top: 5rem;
-    height: calc(100vh - 5rem);
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: 1rem;
-}
+@use "./layout/registerTransaction"

@@ -1,5 +1,13 @@
-import { createBrowserRouter } from "react-router-dom";
-import { DashboardPage, HomePage, LoginPage, PageLayout, RegisterPage } from "./pages";
+import { createBrowserRouter } from "react-router-dom"
+import { 
+    DashboardPage, 
+    HomePage, 
+    LoginPage, 
+    PageLayout, 
+    RegisterPage, 
+    AuthLayout, 
+    RegisterTransaction
+} from "./pages"
 
 
 const router = createBrowserRouter([
@@ -10,15 +18,25 @@ const router = createBrowserRouter([
                 index: true,
                 element: <HomePage/>
             }, {
-                path: '/login',
+                path: 'dashboard',
+                element: <DashboardPage/>
+            }, {
+                path: 'transaction/new',
+                element: <RegisterTransaction/>
+            }
+        ]
+    },
+    {
+        path: '/auth',
+        element: <AuthLayout/>,
+        children: [ {
+                path: 'login',
                 element: <LoginPage/>
             }, {
-                path: '/register',
+                path: 'register',
                 element: <RegisterPage/>
-            }, {
-                path: '/dashboard',
-                element: <DashboardPage/>
             }
+
         ]
     }
 ])

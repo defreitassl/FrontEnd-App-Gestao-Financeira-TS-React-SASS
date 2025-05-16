@@ -6,6 +6,7 @@
 .recent-transaction-item {
     @extend .dashboard-item;
     flex-direction: row;
+    padding: 1rem 1rem;
     width: 100%;
     height: 3rem;
     cursor: pointer;
@@ -13,10 +14,6 @@
 
     &:hover {
         background-color: var(--color-btn-hover);
-    }
-
-    @media (min-width: 350px) {
-        padding: 1rem 1rem;
     }
 
     .recent-transaction-name {
@@ -36,6 +33,12 @@
             font-size: 1rem;
             @extend .dashboard-item-name;
         }
+
+        .recent-transaction-date {
+            display: none;
+            font-size: 1rem;
+            @extend .dashboard-item-name;
+        }
         
         .recent-transaction-value {
             font-size: 1rem;
@@ -48,6 +51,16 @@
             justify-content: space-around;
 
             .recent-transaction-category {
+                display: block;
+            }
+        }
+    }
+
+    @media (min-width: 825px) {
+        .recent-transaction-inner-container {
+            justify-content: space-between;
+
+            .recent-transaction-date {
                 display: block;
             }
         }

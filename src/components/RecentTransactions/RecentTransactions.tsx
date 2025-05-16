@@ -18,6 +18,7 @@ const RecentTransactions = ({ transactions }: IRecentTransactions) => {
                     <RecentTransaction 
                         key={transaction._id}
                         transactionName= {transaction.name}
+                        transactionDate={transaction.date ? transaction.date : null}
                         transactionValue={
                             transaction.amount > 0 
                             ? formatCurrency(transaction.amount) 

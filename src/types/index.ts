@@ -1,12 +1,17 @@
 import AuthResponse from "./AuthResponse"
 import FetchResponse from "./FetchResponse"
-import ITransaction from "./ITransaction"
+import { ITransaction, IRegisterTransaction } from "./ITransaction"
 import UserSummary from "./UserSummary"
+import TransactionCategory from "./TransactionCategory"
+import ServiceResponse from "./ServiceResponse"
 
 
 export {
     AuthResponse,
     FetchResponse,
     ITransaction,
-    UserSummary
+    IRegisterTransaction,
+    UserSummary,
+    TransactionCategory,
+    ServiceResponse
 }
