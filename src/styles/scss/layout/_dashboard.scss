@@ -1,6 +1,7 @@
 @use "../components/dashboardStats";
 @use "../components/recentTransaction";
 @use "../utils/typography" as typo;
+@use "../utils/variables" as v;
 
 .dashboard-stats {
     display: flex;
@@ -30,6 +31,56 @@
 .dashboard-stats-inner-container {
     display: flex; 
     gap: 0.6rem;
+}
+
+.register-transaction-btns {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.register-transaction-btn {
+    width: 50%;
+    min-height: 2.5rem;
+    cursor: pointer;
+    border: none;
+    border-radius: v.$btn-border-radius;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &.income {
+        background-color: var(--color-inflow);
+        transition: v.$transition;
+        
+        &:hover {
+            background-color: var(--color-bg-input);
+            
+            .register-transaction-btn-text {
+                color: var(--color-inflow);
+            }
+        }
+    }
+
+    &.expense {
+        background-color: var(--color-outflow);
+        transition: v.$transition;
+
+        &:hover {
+            background-color: var(--color-bg-input);
+            
+            .register-transaction-btn-text {
+                color: var(--color-outflow);
+            }
+        }
+    }
+
+    .register-transaction-btn-text {
+        font-family: typo.$font-text-btn;
+        color: var(--color-bg-secundary);
+        font-weight: 600;
+        font-size: larger;
+    }
 }
 
 .recent-transactions-area {

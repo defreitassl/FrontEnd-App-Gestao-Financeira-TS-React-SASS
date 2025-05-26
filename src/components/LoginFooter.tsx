@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 interface ILoginFooter {
     message: "Don't have an account?" | "Already have an account?"
     linkWord: "Sign Up" | "Sign In"
-    link: "/login" | "/register"
+    link: "/auth/login" | "/auth/register"
 }
 
 const LoginFooter = ({ message, linkWord, link }: ILoginFooter) => {

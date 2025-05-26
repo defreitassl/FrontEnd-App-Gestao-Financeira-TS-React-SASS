@@ -66,7 +66,7 @@ const RegisterPage = () => {
             </div>
             <div className="form-actions">
                 <LargeButton innerText="Sign Up" event={handleRegister}/>
-                <LoginFooter link="/login" 
+                <LoginFooter link="/auth/login" 
                     message="Already have an account?" 
                     linkWord="Sign In"
                 />

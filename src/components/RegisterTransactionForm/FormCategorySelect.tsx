@@ -3,14 +3,13 @@ import { TransactionCategory } from "../../types"
 interface IFormSelect {
     name: string
     options: TransactionCategory[]
-    value: string
     onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void
 }
 
-const FormCategorySelect = ({ name, options, value, onChange}: IFormSelect) => {
+const FormCategorySelect = ({ name, options, onChange}: IFormSelect) => {
     return (
-        <select className="select-input" name={name} id={name} value={value} onChange={onChange} required>
-            <option selected disabled>Select a category</option>
+        <select defaultValue={'Select a category'} className="select-input" name={name} id={name} onChange={onChange} required>
+            <option disabled>Select a category</option>
             {
                 options.length > 0 && options.map((option => {
                     return (

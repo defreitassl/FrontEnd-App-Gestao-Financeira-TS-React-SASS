@@ -404,6 +404,48 @@ nav {
   gap: 0.6rem;
 }
 
+.register-transaction-btns {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.register-transaction-btn {
+  width: 50%;
+  min-height: 2.5rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.register-transaction-btn.income {
+  background-color: var(--color-inflow);
+  transition: 0.3s ease;
+}
+.register-transaction-btn.income:hover {
+  background-color: var(--color-bg-input);
+}
+.register-transaction-btn.income:hover .register-transaction-btn-text {
+  color: var(--color-inflow);
+}
+.register-transaction-btn.expense {
+  background-color: var(--color-outflow);
+  transition: 0.3s ease;
+}
+.register-transaction-btn.expense:hover {
+  background-color: var(--color-bg-input);
+}
+.register-transaction-btn.expense:hover .register-transaction-btn-text {
+  color: var(--color-outflow);
+}
+.register-transaction-btn .register-transaction-btn-text {
+  font-family: "Roboto";
+  color: var(--color-bg-secundary);
+  font-weight: 600;
+  font-size: larger;
+}
+
 .recent-transactions-area {
   display: flex;
   flex-direction: column;
@@ -491,6 +533,17 @@ nav {
   z-index: 10;
   display: flex;
   justify-content: center;
+}
+.form-button .navigate-previous-btn {
+  border: none;
+  background-color: transparent;
+  color: var(--color-text-primary);
+  transition: 0.3s ease;
+  font-size: 1.3rem;
+  position: absolute;
+  left: 5%;
+  bottom: 30%;
+  top: 30%;
 }
 .form-button .add-transaction-btn {
   border: none;

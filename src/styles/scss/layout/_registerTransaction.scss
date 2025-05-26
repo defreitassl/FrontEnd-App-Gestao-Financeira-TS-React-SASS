@@ -82,6 +82,19 @@
   display: flex;
   justify-content: center;
 
+  .navigate-previous-btn {
+    border: none;
+    background-color: transparent;
+    color: var(--color-text-primary);
+    transition: v.$transition;
+    font-size: 1.3rem;
+    
+    position: absolute;
+    left: 5%;
+    bottom: 30%;
+    top: 30%;
+  }
+
   .add-transaction-btn {
     border: none;
     border-radius: v.$btn-border-radius;

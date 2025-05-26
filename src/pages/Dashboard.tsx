@@ -2,8 +2,7 @@ import { useState, useEffect } from "react"
 import { 
     Container, 
     MainText, 
-    DashboardStats, 
-    LargeButton, 
+    DashboardStats,
     SubText, 
     RecentTransactions 
 } from "../components"
@@ -11,6 +10,8 @@ import { getUserSumary } from "../services"
 import { ITransaction, UserSummary } from "../types"
 import formatCurrency from "../utils/formatCurrency"
 import { useNavigate } from "react-router-dom"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faTurnDown, faTurnUp } from "@fortawesome/free-solid-svg-icons"
 
 
 const DashboardPage = () => {
@@ -42,10 +43,20 @@ const DashboardPage = () => {
         <Container>
             <MainText text="Dashboard" alignLeft={true}/>
             <DashboardStats balance={balance} income={income} expenses={expenses}/>
-            <LargeButton 
-                innerText="New Transaction" 
-                event={()=>{navigate('transaction/new')}}
-            />
+            <div className="register-transaction-btns">
+                <button 
+                    className="register-transaction-btn income"
+                    onClick={() => navigate('/dashboard/transaction/new?inflow=true')}
+                >
+                    <p className="register-transaction-btn-text"><FontAwesomeIcon icon={faTurnUp}/></p>
+                </button>
+                <button 
+                    className="register-transaction-btn expense"
+                    onClick={() => navigate('/dashboard/transaction/new?inflow=false')}
+                >
+                    <p className="register-transaction-btn-text"><FontAwesomeIcon icon={faTurnDown}/></p>
+                </button>
+            </div>
             <div className="recent-transactions-area">
                 <SubText text="Recent Transactions"/>
                 <RecentTransactions transactions={transactions}/>

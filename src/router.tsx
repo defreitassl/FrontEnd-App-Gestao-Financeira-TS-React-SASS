@@ -13,12 +13,13 @@ import {
 const router = createBrowserRouter([
     {
         path: '/',
+        element: <HomePage/>
+    },
+    {
+        path: '/dashboard',
         element: <PageLayout/>,
         children: [ {
                 index: true,
-                element: <HomePage/>
-            }, {
-                path: 'dashboard',
                 element: <DashboardPage/>
             }, {
                 path: 'transaction/new',

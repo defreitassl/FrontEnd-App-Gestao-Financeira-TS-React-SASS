@@ -59,7 +59,7 @@ const LoginPage = () => {
                     innerText="Sign In" 
                     event={handleLogin}
                 />
-                <LoginFooter link="/register" 
+                <LoginFooter link="/auth/register" 
                     message="Don't have an account?" 
                     linkWord="Sign Up"
                 />

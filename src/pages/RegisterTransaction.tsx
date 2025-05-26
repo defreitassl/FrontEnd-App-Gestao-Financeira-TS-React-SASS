@@ -10,7 +10,9 @@ import {
 import { getAllCategories, registerOneTransaction } from "../services"
 import { IRegisterTransaction, TransactionCategory } from "../types"
 import { useNotification } from "../hooks"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useSearchParams } from "react-router-dom"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons"
 
 
 const RegisterTransaction = () => {
@@ -25,7 +27,10 @@ const RegisterTransaction = () => {
     const [categories, setCategories] = useState<TransactionCategory[]>([])
 
     const { showNotification } = useNotification()
+    const [searchParams] = useSearchParams()
     const navigate = useNavigate()
+
+    const inflow = searchParams.get("inflow") ? searchParams.get("inflow") === "true" : false
 
     useEffect(() => {
         const fetchCategories = async (token: string) => {
@@ -51,7 +56,7 @@ const RegisterTransaction = () => {
             categoryId: category,
             name,
             amount: parseFloat(amount),
-            inflow: true,
+            inflow: inflow,
             paymentMethod: paymentMethod,
             date,
             recipient,
@@ -96,11 +101,10 @@ const RegisterTransaction = () => {
                                 value={paymentMethod} 
                                 onChange={(e) => {setPaymentMethod(e.target.value)}}
                             >
-                                <option selected disabled></option>
                                 <option value="Pix">Pix</option>
                                 <option value="Cartão">Card</option>
                                 <option value="Transferência">Transfer</option>
-                                <option value="Dinheiro" selected>Cash</option>
+                                <option value="Dinheiro" defaultValue={'Cash'}>Cash</option>
                             </select>
                         </FormField>
 
@@ -119,8 +123,7 @@ const RegisterTransaction = () => {
                     <div className="form-group">
                         <FormField>
                             <FormLabel required={true} label="Category" />
-                            <FormCategorySelect 
-                                value={category} 
+                            <FormCategorySelect
                                 name="category" 
                                 options={categories} 
                                 onChange={(e) => {setCategory(e.target.value)}} 
@@ -161,6 +164,12 @@ const RegisterTransaction = () => {
                     </FormField>
 
                     <div className="form-button">
+                        <button 
+                            className="navigate-previous-btn"
+                            onClick={() => navigate(-1)}
+                        >
+                            <FontAwesomeIcon icon={faChevronLeft} />
+                        </button>
                         <button 
                             className="add-transaction-btn" 
                             type="submit"

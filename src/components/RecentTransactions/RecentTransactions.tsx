@@ -19,13 +19,9 @@ const RecentTransactions = ({ transactions }: IRecentTransactions) => {
                         key={transaction._id}
                         transactionName= {transaction.name}
                         transactionDate={transaction.date ? transaction.date : null}
-                        transactionValue={
-                            transaction.amount > 0 
-                            ? formatCurrency(transaction.amount) 
-                            : formatCurrency(transaction.amount)
-                        }
+                        transactionValue={formatCurrency(transaction.amount)}
                         transactionCategory={transaction.categoryId.name}
-                        isPositive={transaction.amount > 0 ? true : false}
+                        isPositive={transaction.inflow}
                     />
                 )
             }))}
